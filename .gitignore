@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.local
+.vercel/
+*.log
+.DS_Store
+Thumbs.db
+.agents
+skills-lock.json
