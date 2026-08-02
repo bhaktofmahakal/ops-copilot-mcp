@@ -1,0 +1,42 @@
+<evaluation>
+  <qa_pair>
+    <question>Scan all active discrepancies for orders with critical severity. Which customer name placed the order that has a double payment discrepancy?</question>
+    <answer>Guy Hawkins</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Investigate the order with the paid_not_shipped discrepancy. Which warehouse location is holding up the pending fulfillment?</question>
+    <answer>Warehouse A</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the order where payment was fully refunded but goods are still in transit. What is the tracking number for the shipment?</question>
+    <answer>9400100666</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the order with a shipped_not_paid discrepancy. What is the gateway reference string for the payment authorization hold?</question>
+    <answer>ch_1005_mno</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Investigate order ORD-1008. What is the over-refunded dollar amount between the actual logged refund event and the expected partial refund?</question>
+    <answer>$20.00</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Identify the order with a double payment anomaly and check its items. What is the SKU of the product purchased in this order?</question>
+    <answer>SKU-G700</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the customer email address associated with the order that has a paid_not_shipped discrepancy.</question>
+    <answer>cameron.w@example.com</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Investigate the shipped_not_paid discrepancy. Which shipping carrier is carrying the uncollected package?</question>
+    <answer>DHL</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Run an investigation on order ORD-1004 and escalate it. What is the status of the newly created escalation record?</question>
+    <answer>open</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Scan all discrepancies to find the highest severity case involving a refund mismatch. What is the item SKU with unit price $100.00 in that order?</question>
+    <answer>SKU-H801</answer>
+  </qa_pair>
+</evaluation>
