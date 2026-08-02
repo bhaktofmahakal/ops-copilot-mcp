@@ -166,7 +166,7 @@ All 42 requirements from `assignment.md` and all 5 client answers from `CLIENT_Q
 
 | Requirement Group | Status | Key Verification / Artifact |
 |---|---|---|
-| **TypeScript & SDK** | **PASS** | TypeScript 5.7, `@modelcontextprotocol/sdk` v1.6.1 |
+| **TypeScript & SDK** | **PASS** | TypeScript 5.7, `@modelcontextprotocol/sdk` v1.30.0 |
 | **Hosted Server** | **PASS** | Live at `https://ops-copilot-mcp.vercel.app/mcp` |
 | **Synthetic Data** | **PASS** | 8 synthetic orders in `src/data/synthetic.ts` |
 | **Coherent Workflow** | **PASS** | Detect → Investigate → Escalate → Retrieve |

@@ -5,14 +5,19 @@ import { registerInvestigateDiscrepancyTool } from "./tools/investigate-discrepa
 import { registerCreateEscalationTool } from "./tools/create-escalation.js";
 import { registerGetEscalationsTool } from "./tools/get-escalations.js";
 
-export const server = new McpServer({
-  name: "ops-copilot-mcp-server",
-  version: "1.0.0"
-});
+export function createMcpServer(): McpServer {
+  const server = new McpServer({
+    name: "ops-copilot-mcp-server",
+    version: "1.0.0"
+  });
 
-// Register all 5 MCP tools
-registerListDiscrepanciesTool(server);
-registerGetOrderDetailsTool(server);
-registerInvestigateDiscrepancyTool(server);
-registerCreateEscalationTool(server);
-registerGetEscalationsTool(server);
+  registerListDiscrepanciesTool(server);
+  registerGetOrderDetailsTool(server);
+  registerInvestigateDiscrepancyTool(server);
+  registerCreateEscalationTool(server);
+  registerGetEscalationsTool(server);
+
+  return server;
+}
+
+export const server = createMcpServer();

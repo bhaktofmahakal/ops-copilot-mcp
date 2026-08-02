@@ -1,25 +1,50 @@
 import express, { Request, Response } from "express";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
-import { server } from "./server.js";
+import { createMcpServer } from "./server.js";
 
 const app = express();
+
+// Enable CORS for browser-based clients and MCP Inspector
+app.use((_req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Mcp-Protocol-Version, Mcp-Session-Id");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  if (_req.method === "OPTIONS") {
+    res.sendStatus(204);
+    return;
+  }
+  next();
+});
+
 app.use(express.json());
 
 // Stateless Streamable HTTP transport
 app.post("/mcp", async (req: Request, res: Response) => {
-  const transport = new StreamableHTTPServerTransport({
-    sessionIdGenerator: undefined,
-    enableJsonResponse: true
-  });
-
-  res.on("close", () => {
-    transport.close().catch((err) => {
-      console.error("Error closing transport:", err);
+  try {
+    const transport = new StreamableHTTPServerTransport({
+      sessionIdGenerator: undefined,
+      enableJsonResponse: true
     });
-  });
 
-  await server.connect(transport);
-  await transport.handleRequest(req, res, req.body);
+    res.on("close", () => {
+      transport.close().catch((err) => {
+        console.error("Error closing transport:", err);
+      });
+    });
+
+    const mcpServer = createMcpServer();
+    await mcpServer.connect(transport);
+    await transport.handleRequest(req, res, req.body);
+  } catch (err) {
+    console.error("Error handling MCP request:", err);
+    if (!res.headersSent) {
+      res.status(500).json({
+        jsonrpc: "2.0",
+        error: { code: -32603, message: "Internal server error" },
+        id: req.body?.id || null
+      });
+    }
+  }
 });
 
 // Health check endpoint
