@@ -162,7 +162,6 @@ All 10 complex multi-step operational queries executed against the live endpoint
 
 ## 7. Requirements Traceability Summary
 
-All 42 requirements from `assignment.md` and all 5 client answers from `CLIENT_QUESTIONS.md` are 100% fulfilled:
 
 | Requirement Group | Status | Key Verification / Artifact |
 |---|---|---|
@@ -176,25 +175,25 @@ All 42 requirements from `assignment.md` and all 5 client answers from `CLIENT_Q
 
 ---
 
-## 9. AI Worklog & Engineering Journal
+## 8. AI Worklog & Engineering Journal
 
-### 9.1 AI Tools & Models Used
+### 8.1 AI Tools & Models Used
 - **Gemini 3.1 Pro**: Initial requirements research, assignment analysis, and traceability matrix generation.
 - **Claude Opus 4.6 (Thinking)**: PRD drafting, MCP tool schema design (`ops_*`), annotations (`readOnlyHint`), and architecture design.
 - **Gemini 3.6 Flash**: TypeScript code generation, Vitest test suite implementation, live deployment scripts, and empirical verification.
 - **TinyFish Agent / CLI**: Web research, MCP standard verification, and Upstash Redis REST specs verification.
 
-### 9.2 Human–AI Division of Responsibilities
+### 8.2 Human–AI Division of Responsibilities
 - **Product Decisions**: AI proposed workflow candidates; Human selected payment-fulfillment discrepancy investigation.
 - **MCP Tool Design**: AI drafted tool schemas & annotations per `mcp-builder` standards; Human approved tool list.
 - **Architecture & State**: Human audited hosting cold-start behavior; AI implemented Upstash Redis REST external persistence.
 - **Code & Test Generation**: AI generated implementation & 34 Vitest tests; Human reviewed every file and verified runtime behavior.
 
-### 9.3 AI Suggestions Corrected (Key Engineering Pivot)
+### 8.3 AI Suggestions Corrected (Key Engineering Pivot)
 - **Initial AI Proposal**: Switch hosting provider from Vercel to Railway to avoid cold-start memory loss.
 - **Human Correction / Refinement**: Research showed free-tier containers (including Railway idle sleep) can still cold-start. Instead of changing hosts, we externalized state persistence to **Upstash Redis REST API** (`@upstash/redis`), keeping the stateless compute on Vercel while guaranteeing true durability.
 
-### 9.4 Verification & Remaining Risks
+### 8.4 Verification & Remaining Risks
 - **Verification Result**: 34/34 Vitest unit/integration tests passing. 10/10 evaluation benchmark QA pairs 100% matched against live server.
 - **Remaining Risks**: None for submitted scope. Local dev falls back seamlessly to in-memory store if Upstash env vars are unset.
 
