@@ -174,19 +174,6 @@ All 42 requirements from `assignment.md` and all 5 client answers from `CLIENT_Q
 | **Focused Testing** | **PASS** | 34 automated Vitest tests passing |
 | **Client Communication** | **PASS** | Scope & design questions answered in [`docs/CLIENT_QUESTIONS.md`](file:///u:/ops-copilot-mcp/docs/CLIENT_QUESTIONS.md) |
 
----
-
-## 8. Submission Checklist
-
-| Submission Item (`assignment.md:71-90`) | Status | Location |
-|---|---|---|
-| **Hosted MCP URL** | **READY** | `https://ops-copilot-mcp.vercel.app/mcp` |
-| **Source Repository** | **READY** | Complete TypeScript repository with clean git log |
-| **Concise README** | **READY** | [`README.md`](file:///u:/ops-copilot-mcp/README.md) |
-| **Product Decisions & Assumptions** | **READY** | [`README.md`](file:///u:/ops-copilot-mcp/README.md) §5 |
-| **Focused Tests / Runtime Verification** | **READY** | `tests/` Vitest suite (34/34 passed) |
-| **4–5 Minute Video Demo** | **READY** | Recorded asynchronously via Loom/OBS |
-| **AI Worklog** | **READY** | [`README.md`](file:///u:/ops-copilot-mcp/README.md) §9 |
 
 ---
 
