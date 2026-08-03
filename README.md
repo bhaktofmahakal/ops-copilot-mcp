@@ -172,7 +172,6 @@ All 42 requirements from `assignment.md` and all 5 client answers from `CLIENT_Q
 | **Coherent Workflow** | **PASS** | Detect → Investigate → Escalate → Retrieve |
 | **State Durability** | **PASS** | Upstash Redis REST persistence verified post-cold start |
 | **Focused Testing** | **PASS** | 34 automated Vitest tests passing |
-| **Client Communication** | **PASS** | Scope & design questions answered in [`docs/CLIENT_QUESTIONS.md`](file:///u:/ops-copilot-mcp/docs/CLIENT_QUESTIONS.md) |
 
 
 ---
